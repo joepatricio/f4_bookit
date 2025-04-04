@@ -1,32 +1,18 @@
-// import { Route, Routes } from "react-router";
-// import * as Views from "./views/containers";
-
-// export const AppRoutes = () => {
-//   return (
-//     <Routes>
-//       <Route path="employee-list" element={<Views.EmployeeList />} />
-//       <Route path="employee-add" element={<Views.EmployeeForm />} />
-//       <Route path="employee-details" element={<Views.EmployeeDetails />} />
-
-//       <Route path="*" element={<Views.NotFoundScreen />} />
-//     </Routes>
-//   );
-// };
-
-// TODO
 import { BrowserRouter, Route, Routes } from "react-router";
 import * as Views from "./views/containers";
+import { PATHS } from "./constant";
 
 export const AppRoutes = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Views.MainScreen />}>
-          <Route path="employee-list" element={<Views.EmployeeList />} />
-          <Route path="employee-add" element={<Views.EmployeeForm />} />
-          <Route path="employee-details" element={<Views.EmployeeDetails />} />
+        <Route path={PATHS.MAIN.path} element={<Views.Main />}>
+          {/* ADD PPRIVATE ROUTES HERE (Routes that can only access after login like Dashboard, Account Setting, etc.) */}
+          <Route path={PATHS.DASHBOARD.path} element={<Views.Dashboard />} />
         </Route>
-        <Route path="*" element={<Views.NotFoundScreen />} />
+        {/* ADD PUBLIC ROUTES HERE (e.g., Login, Sign Up, Forgot Pass, etc. ) */}
+        <Route path={PATHS.LOGIN.path} element={<Views.Login />} />
+        <Route path={PATHS.NOT_FOUND.path} element={<Views.NotFound />} />
       </Routes>
     </BrowserRouter>
   );
