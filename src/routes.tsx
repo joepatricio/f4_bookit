@@ -12,6 +12,7 @@ export const AppRoutes = () => {
         </Route>
         {/* ADD PUBLIC ROUTES HERE (e.g., Login, Sign Up, Forgot Pass, etc. ) */}
         <Route path={PATHS.LOGIN.path} element={<Views.Login />} />
+        <Route path={PATHS.LOGOUT.path} element={<Views.Logout />} />
         <Route path={PATHS.NOT_FOUND.path} element={<Views.NotFound />} />
       </Routes>
     </BrowserRouter>

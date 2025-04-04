@@ -8,6 +8,10 @@ export const PATHS = {
     path: "/login",
     label: "Login"
   },
+  LOGOUT: {
+    path: "/logout",
+    label: "Logout"
+  },
   DASHBOARD: {
     path: "/dashboard",
     label: "Dashboard"
@@ -24,6 +28,10 @@ export const SIDE_BAR_MENU = [
   {
     path: "/dashboard",
     label: "Dashboard"
+  },
+  {
+    path: "/logout",
+    label: "Logout"
   }
   // Add more path here
 ];
